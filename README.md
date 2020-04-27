@@ -186,7 +186,7 @@ Runtime-specific dependencies:
 Common dependencies:
 * Microsoft Visual C++ Redistributable (msvcrt.dll)
 
-Runtime specific dependencies:
+Runtime-specific dependencies:
 
 | Runtime configuration  | Compiler                      | Dependency
 | :--------------------- | :---------------------------- | :---------
@@ -200,7 +200,7 @@ Runtime specific dependencies:
 Common dependencies:
 * System C/C++ runtime (libc++.dylib, libSystem.dylib)
 
-Runtime specific dependencies:
+Runtime-specific dependencies:
 
 | Runtime configuration  | Compiler                      | Dependency
 | :--------------------- | :---------------------------- | :---------
@@ -297,118 +297,3 @@ without limitation, third party license terms, other Intel software license
 terms, and open source software license terms. These separate license terms
 govern your use of the third party programs as set forth in the
 "[THIRD-PARTY-PROGRAMS](THIRD-PARTY-PROGRAMS)" file.
-
---------
-
-[Legal Information](doc/legal_information.md)
-=======
-* [Intel(R) C/C++ Compiler](https://software.intel.com/en-us/intel-parallel-studio-xe)
-  17.0
-and on Windows Server\* 2012 R2 with
-* Visual Studio\* 2015
-* [Intel(R) C/C++ Compiler](https://software.intel.com/en-us/intel-parallel-studio-xe)
-  17.0
-
-The implementation uses OpenMP\* 4.0 SIMD extensions. We recommend using
-Intel(R) Compiler for the best performance results.
-
-## Installation
-Download [Intel MKL-DNN source code](https://github.com/01org/mkl-dnn/archive/master.zip)
-or clone the repository to your system
-
-```
-	git clone https://github.com/01org/mkl-dnn.git
-```
-
-Ensure that all software dependencies are in place and have at least minimal
-supported version. 
-
-Intel MKL-DNN can take advantage of optimized
-matrix-matrix multiplication (GEMM) function from Intel MKL. The dynamic
-library with this functionality is included in the repository. If you choose 
-to build Intel MKL-DNN with the binary dependency download Intel MKL small
-libraries using provided script
-
-```
-	cd scripts && ./prepare_mkl.sh && cd ..
-```
-
-or manually from [GitHub release section](https://github.com/01org/mkl-dnn/releases)
-and unpack it to the `external` directory in the repository root. 
-
-You can choose to build Intel MKL-DNN without binary dependency. The resulting
-version will be fully functional, however performance of certain convolution
-shapes and sizes and inner product relying on SGEMM function may be suboptimal.
-
-Intel MKL-DNN uses a CMake-based build system
-
-```
-	mkdir -p build && cd build && cmake .. && make
-```
-
-Intel MKL-DNN includes unit tests implemented using the googletest framework. To validate your build, run:
-
-```
-	make test
-```
-
-Documentation is provided inline and can be generated in HTML format with Doxygen:
-
-```
-	make doc
-```
-
-Documentation will reside in `build/reference/html` folder.
-
-Finally,
-```
-	make install
-```
-will place the  header files, libraries and documentation in `/usr/local`. To change
-the installation path, use the option `-DCMAKE_INSTALL_PREFIX=<prefix>` when invoking CMake.
-
-## Linking your application
-Intel MKL-DNN include several header files providing C and C++ APIs for 
-the functionality and several dynamic libraries depending on how Intel MKL-DNN
-was built. Intel OpenMP runtime and Intel MKL small libraries are not installed
-for standalone Intel MKL-DNN build.
-
-|File                   | Description
-|:---                   |:---
-|lib/libmkldnn.so       | Intel MKL-DNN dynamic library
-|lib/libiomp5.so        | Intel OpenMP* runtime library
-|lib/libmklml_gnu.so    | Intel MKL small library for GNU* OpenMP runtime
-|lib/libmklml_intel.so  | Intel MKL small library for Intel(R) OpenMP runtime
-|include/mkldnn.h       | C header
-|include/mkldnn.hpp     | C++ header
-|include/mkldnn_types.h | auxillary C header
-
-Intel MKL-DNN uses OpenMP* for parallelism and requires an OpenMP runtime 
-library to work. As different OpenMP runtimes may not be binary compatible
-it's important to ensure that only one OpenMP runtime is used throughout the
-application. Having more than one OpenMP runtime initialized may lead to
-undefined behavior resulting in incorrect results or crashes.
-
-Intel MKL-DNN library built with binary dependency will link against Intel OpenMP
-runtime included with Intel MKL small libraries package. Intel OpenMP runtime
-is binary compatible with GNU OpenMP and CLANG OpenMP runtimes and should
-be used in the final application. Here are example linklines for GNU C++ compiler
-and Intel C++ compiler.
-```
-	g++ -std=c++11 -fopenmp -Wl,--as-needed -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn -lmklml_intel -liomp5
-```
-```
-	icpc -std=c++11 -qopenmp -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn -lmklml_intel
-```
-In `g++` example option `-Wl,--as-needed` forces linker to resolve OpenMP symbols
-in Intel OpenMP runtime library.
-
-Intel MKL-DNN library built standalone will use OpenMP runtime supplied by
-the compiler, so as long as both the library and the application use the
-same compiler correct OpenMP runtime will be used. 
-```
-	g++ -std=c++11 -fopenmp -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn
-```
-```
-	icpc -std=c++11 -qopenmp -I${MKLDNNROOT}/include -L${MKLDNNROOT}/lib simple_net.cpp -lmkldnn
-```
