@@ -101,7 +101,7 @@ The library is optimized for the following CPUs:
   Ivy Bridge, Haswell, and Broadwell)
 * Intel&reg; Xeon Phi&trade; processor (formerly Knights Landing and Knights Mill)
 * Intel Xeon Scalable processor (formerly Skylake and Cascade Lake)
-* future Intel Xeon Scalable processor (code name Cooper Lake)
+* future Intel Xeon Scalable processor
 
 On a CPU based on Intel&reg 64 or on AMD64 architecture, oneDNN detects the instruction 
 set architecture (ISA) at runtime and uses just-in-time (JIT) code generation to deploy 
