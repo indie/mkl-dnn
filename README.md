@@ -2,7 +2,7 @@ oneAPI Deep Neural Network Library (oneDNN)
 ===========================================
 
 > This software was previously known as
-> **Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)**
+> **Intel&reg; Math Kernel Library for Deep Neural Networks (Intel&reg; MKL-DNN)**
 > and
 > **Deep Neural Network Library (DNNL)**.
 
@@ -96,16 +96,16 @@ oneDNN supports platforms based on the following architectures:
 
 The library is optimized for the following CPUs:
 * Intel Atom processor with Intel SSE4.1 support
-* 4th, 5th, 6th, 7th, and 8th generation Intel(R) Core(TM) processor
-* Intel(R) Xeon(R) processor E3, E5, and E7 family (formerly Sandy Bridge,
+* 4th, 5th, 6th, 7th, and 8th generation Intel&reg; Core&trade; processor
+* Intel&reg; Xeon&reg; processor E3, E5, and E7 family (formerly Sandy Bridge,
   Ivy Bridge, Haswell, and Broadwell)
-* Intel(R) Xeon Phi(TM) processor (formerly Knights Landing and Knights Mill)
+* Intel&reg; Xeon Phi&trade; processor (formerly Knights Landing and Knights Mill)
 * Intel Xeon Scalable processor (formerly Skylake and Cascade Lake)
 * future Intel Xeon Scalable processor (code name Cooper Lake)
 
-On a CPU based on Intel 64 or AMD64 architecture, oneDNN detects the instruction
-set architecture (ISA) at runtime and uses just-in-time (JIT) code generation to
-deploy the code optimized for the latest supported ISA.
+On a CPU based on Intel&reg Architecture (IA) 64 or on AMD64 architecture, oneDNN 
+detects the instruction set architecture (ISA) at runtime and uses just-in-time (JIT) 
+code generation to deploy the code optimized for the latest supported ISA.
 
 > **WARNING**
 >
@@ -151,7 +151,7 @@ Intel C++ Compiler.
 
 ### GPU Engine
 
-Intel Processor Graphics is supported by the oneDNN GPU engine. The GPU
+Intel Processor Graphics are supported by the oneDNN GPU engine. The GPU
 engine is disabled in the default build configuration. The following
 additional requirements apply when GPU engine is enabled:
 * OpenCL\* runtime library (OpenCL version 1.2 or later)
@@ -166,10 +166,10 @@ and specific versions are defined by the build environment.
 #### Linux
 
 Common dependencies:
-* System C/C++ runtime (libc.so, libstdc++.so)
-* Dynamic Linking Library (libdl.so)
-* C Math Library (libm.so)
-* POSIX Threads Library (libpthread.so)
+* System C/C++ runtime (`libc.so`, `libstdc++.so`)
+* Dynamic Linking Library (`libdl.so`)
+* C Math Library (`libm.so`)
+* POSIX Threads Library (`libpthread.so`)
 
 Runtime-specific dependencies:
 
@@ -298,8 +298,11 @@ terms, and open source software license terms. These separate license terms
 govern your use of the third party programs as set forth in the
 "[THIRD-PARTY-PROGRAMS](THIRD-PARTY-PROGRAMS)" file.
 
+# Legal Information
+
+See the [legal information].
 
 -------
 
 
-[Legal Information]:https://oneapi-src.github.io/oneDNN/legal_information.html
+[legal information]:https://oneapi-src.github.io/oneDNN/legal_information.html
