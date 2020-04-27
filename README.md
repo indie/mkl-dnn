@@ -100,10 +100,10 @@ The library is optimized for the following CPUs:
 * Intel&reg; Xeon&reg; processor E3, E5, and E7 family (formerly Sandy Bridge,
   Ivy Bridge, Haswell, and Broadwell)
 * Intel&reg; Xeon Phi&trade; processor (formerly Knights Landing and Knights Mill)
-* Intel Xeon Scalable processor (formerly Skylake and Cascade Lake)
+* Intel&reg; Xeon&reg; Scalable processor (formerly Skylake and Cascade Lake)
 * future Intel Xeon Scalable processor
 
-On a CPU based on Intel&reg 64 or on AMD64 architecture, oneDNN detects the instruction 
+On a CPU based on Intel&reg; 64 or on AMD64 architecture, oneDNN detects the instruction 
 set architecture (ISA) at runtime and uses just-in-time (JIT) code generation to deploy 
 the code optimized for the latest supported ISA.
 
@@ -115,14 +115,14 @@ the code optimized for the latest supported ISA.
 > for more details.
 
 The library is optimized for the following GPUs:
-* Intel HD Graphics
-* Intel UHD Graphics
-* Intel Iris Plus Graphics
+* Intel&reg; HD Graphics
+* Intel&reg; UHD Graphics
+* Intel&reg; Iris&reg; Plus Graphics
 
 ## Requirements for Building from Source
 
 oneDNN supports systems meeting the following requirements:
-* Operating system with Intel 64 architecture support
+* Operating system with Intel&reg; 64 architecture support
 * C++ compiler with C++11 standard support
 * [CMake](https://cmake.org/download/) 2.8.11 or later
 * [Doxygen](http://www.doxygen.nl/download.html#srcbin) 1.8.5 or later to build
@@ -141,8 +141,7 @@ The CPU engine is built by default and cannot be disabled at build time. The
 engine can be configured to use the OpenMP or TBB threading runtime. The
 following additional requirements apply:
 * OpenMP runtime requires C++ compiler with OpenMP 2.0 or later standard support
-* TBB runtime requires
-[Threading Building Blocks (TBB)](https://www.threadingbuildingblocks.org/)
+* TBB runtime requires [Threading Building Blocks (TBB)]
 2017 or later.
 
 Some implementations rely on OpenMP 4.0 SIMD extensions. For the best
@@ -175,37 +174,37 @@ Runtime-specific dependencies:
 
 | Runtime configuration  | Compiler                      | Dependency
 | :--------------------- | :---------------------------- | :---------
-| `DNNL_CPU_RUNTIME=OMP` | GCC                           | GNU OpenMP runtime (libgomp.so)
-| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (libiomp5.so)
-| `DNNL_CPU_RUNTIME=OMP` | Clang                         | Intel OpenMP runtime (libiomp5.so)
-| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (libtbb.so)
-| `DNNL_GPU_RUNTIME=OCL` | any                           | OpenCL runtime (libOpenCL.so)
+| `DNNL_CPU_RUNTIME=OMP` | GCC                           | GNU OpenMP runtime (`libgomp.so`)
+| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (`libiomp5.so`)
+| `DNNL_CPU_RUNTIME=OMP` | Clang                         | Intel OpenMP runtime (`libiomp5.so`)
+| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (`libtbb.so`)
+| `DNNL_GPU_RUNTIME=OCL` | any                           | OpenCL runtime (`libOpenCL.so`)
 
 #### Windows
 
 Common dependencies:
-* Microsoft Visual C++ Redistributable (msvcrt.dll)
+* Microsoft Visual C++ Redistributable (`msvcrt.dll`)
 
 Runtime-specific dependencies:
 
 | Runtime configuration  | Compiler                      | Dependency
 | :--------------------- | :---------------------------- | :---------
 | `DNNL_CPU_RUNTIME=OMP` | Microsoft Visual C++ Compiler | No additional requirements
-| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (iomp5.dll)
-| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (tbb.dll)
-| `DNNL_GPU_RUNTIME=OCL` | any                           | OpenCL runtime (OpenCL.dll)
+| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (`iomp5.dll`)
+| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (`tbb.dll`)
+| `DNNL_GPU_RUNTIME=OCL` | any                           | OpenCL runtime (`OpenCL.dll`)
 
 #### macOS
 
 Common dependencies:
-* System C/C++ runtime (libc++.dylib, libSystem.dylib)
+* System C/C++ runtime (`libc++.dylib`, `libSystem.dylib`)
 
 Runtime-specific dependencies:
 
 | Runtime configuration  | Compiler                      | Dependency
 | :--------------------- | :---------------------------- | :---------
-| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (libiomp5.dylib)
-| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (libtbb.dylib)
+| `DNNL_CPU_RUNTIME=OMP` | Intel C/C++ Compiler          | Intel OpenMP runtime (`libiomp5.dylib`)
+| `DNNL_CPU_RUNTIME=TBB` | any                           | TBB (`libtbb.dylib`)
 
 ### Validated Configurations
 
@@ -304,5 +303,5 @@ See the [legal information].
 
 -------
 
-
+[Threading Building Blocks (TBB)]:https://www.threadingbuildingblocks.org
 [legal information]:https://oneapi-src.github.io/oneDNN/legal_information.html
