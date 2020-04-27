@@ -297,3 +297,9 @@ without limitation, third party license terms, other Intel software license
 terms, and open source software license terms. These separate license terms
 govern your use of the third party programs as set forth in the
 "[THIRD-PARTY-PROGRAMS](THIRD-PARTY-PROGRAMS)" file.
+
+
+-------
+
+
+[Legal Information]:https://oneapi-src.github.io/oneDNN/legal_information.html
