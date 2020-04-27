@@ -103,9 +103,9 @@ The library is optimized for the following CPUs:
 * Intel Xeon Scalable processor (formerly Skylake and Cascade Lake)
 * future Intel Xeon Scalable processor (code name Cooper Lake)
 
-On a CPU based on Intel&reg Architecture (IA) 64 or on AMD64 architecture, oneDNN 
-detects the instruction set architecture (ISA) at runtime and uses just-in-time (JIT) 
-code generation to deploy the code optimized for the latest supported ISA.
+On a CPU based on Intel&reg 64 or on AMD64 architecture, oneDNN detects the instruction 
+set architecture (ISA) at runtime and uses just-in-time (JIT) code generation to deploy 
+the code optimized for the latest supported ISA.
 
 > **WARNING**
 >
