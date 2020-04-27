@@ -150,7 +150,7 @@ Intel C++ Compiler.
 
 ### GPU Engine
 
-Intel Processor Graphics are supported by the oneDNN GPU engine. The GPU
+Intel&reg; Processor Graphics are supported by the oneDNN GPU engine. The GPU
 engine is disabled in the default build configuration. The following
 additional requirements apply when GPU engine is enabled:
 * OpenCL\* runtime library (OpenCL version 1.2 or later)
